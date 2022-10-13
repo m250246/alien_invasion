@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7574e2b6-8425-4277-9f2a-932cf7fd9c76" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/alien_invasion.py" beforeDir="false" afterPath="$PROJECT_DIR$/alien_invasion.py" afterDir="false" />
-    </list>
+    <list default="true" id="7574e2b6-8425-4277-9f2a-932cf7fd9c76" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,7 +42,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665672859832</updated>
       <workItem from="1665672861410" duration="78000" />
-      <workItem from="1665672993823" duration="454000" />
+      <workItem from="1665672993823" duration="654000" />
     </task>
     <servers />
   </component>
