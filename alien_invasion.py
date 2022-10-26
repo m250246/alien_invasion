@@ -7,7 +7,6 @@ from settings import Settings
 from ship import Ship
 from bullet import Bullet
 from alien import Alien
-
 class AlienInvasion:
     """Overall class to manage game assets and behavior"""
     def __init__(self):
@@ -25,7 +24,6 @@ class AlienInvasion:
         self.aliens = pygame.sprite.Group()
 
         self.fleet()
-
     def run_game(self):
         """Start the main loop for the game."""
         while True:
@@ -35,8 +33,6 @@ class AlienInvasion:
             self.bUpdate()
             self.aUpdate()
             self.newScreen()
-
-
     def bUpdate(self):
         """Update position of bullets and get rid of old bullets."""
         # Update bullet positions.
@@ -48,14 +44,12 @@ class AlienInvasion:
 
         # Check for any bullets that have hit aliens. Get rid of the bullet and alien.
         #collisions = pygame.sprite.groupcollide(self.bullets, self.aliens, True, True)
-
     def aUpdate(self):
         """Update the positions of all aliens in the fleet."""
         self.fEdges()
         self.aliens.update()
-
     def fEdges(self):
-        """Respond appropriately if any alines have reached an edge."""
+        """Respond appropriately if any a lines have reached an edge."""
         for alien in self.aliens.sprites():
             if alien.edges():
                 self.moveFleet()
@@ -74,7 +68,6 @@ class AlienInvasion:
                 self.keydown(event)
             elif event.type == pygame.KEYUP:
                 self.keyup(event)
-
     def keydown(self, event):
         """Respond to keypresses."""
         if event.key == pygame.K_RIGHT:
@@ -85,21 +78,17 @@ class AlienInvasion:
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self.fire()
-
     def keyup(self, event):
-        """Respond to key realeases."""
+        """Respond to key releases."""
         if event.key == pygame.K_RIGHT:
             self.ship.moveR = False
         elif event.key == pygame.K_LEFT:
             self.ship.moveL = False
-
     def fire(self):
         """Create a new bullet and add it to the bullets group."""
         if len(self.bullets) < self.settings.bAllowed:
             new_bullet = Bullet(self)
             self.bullets.add(new_bullet)
-
-
     def fleet(self):
         """Create the fleet of aliens."""
         new_alien = Alien(self)
@@ -116,7 +105,6 @@ class AlienInvasion:
         for row in range(rows):
             for num in range(alienNum):
                 self.makeAlien(num, row)
-
     def makeAlien(self, num, row):
         """Create an alien and place it in the row."""
         new_alien = Alien(self)
@@ -125,7 +113,6 @@ class AlienInvasion:
         new_alien.pos.x = new_alien.x
         new_alien.pos.y = aHeight = (2*aHeight*row)
         self.aliens.add(new_alien)
-
     def newScreen(self):
         """Update images on the screen, and flip to the new screen."""
         self.screen.fill(self.settings.sBackground)
@@ -142,7 +129,3 @@ if __name__ == '__main__':
     # Make a game instance, and run the game.
     alienI = AlienInvasion()
     alienI.run_game()
-
-
-
-
